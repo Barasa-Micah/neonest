@@ -137,8 +137,37 @@
     .font-dancing-script {
       font-family: 'Dancing Script', cursive;
     }
-    
-   
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .animate-slide-in-left {
+      animation: slideInLeft 1.5s ease-out forwards;
+    }
+
+    .hidden-animation {
+      opacity: 0;
+    }
+
+  
     
   </style>
 </head>
@@ -152,7 +181,7 @@
 
 
   <!-- Navigation -->
-  <nav class="bg-black text-white py-4 fixed-navbar">
+  <nav class="bg-purple-500 text-white py-4 fixed-navbar">
     <div class="container mx-auto flex justify-between items-center">
       <a href="#" class="text-2xl font-bold font-dancing-script">Che Innovations Uganda Limited</a>
       <div class="md:hidden">
@@ -162,12 +191,21 @@
       </div>
       <ul id="navbar-menu" class="hidden md:flex space-x-6">
         <li><a href="#about-us" class="hover:text-green-400">About</a></li>
-        <li><a href="#about" class="hover:text-green-400">Blog</a></li>
-        <li><a href="#problem" class="hover:text-green-400">Problem</a></li>
-        <li><a href="#solution" class="hover:text-green-400">Solution</a></li>
+        <li class="relative group">
+          <button id="neo-dropdown" class="hover:text-green-400 focus:outline-none">NeoNest <i class="fas fa-caret-down"></i></button>
+          <ul id="neo-menu" class="absolute left-0 hidden mt-1 bg-white text-black shadow-lg group-hover:block">
+            <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200">Problem</a></li>
+            <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200">Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact" class="hover:text-green-400">Impact</a></li>
+
         <li><a href="#team" class="hover:text-green-400">Team</a></li>
-        <li><a href="#partners" class="hover:text-green-400">Partners</a></li>
+        <li><a href="#partners" class="hover:text-green-400">Partners </a></li>
+        <li><a href="gallery.html" class="hover:text-green-400">Media</a></li>
+
         <li><a href="#contact" class="hover:text-green-400">Contact</a></li>
+
       </ul>
     </div>
   </nav>
@@ -192,7 +230,7 @@
 
 
  <!-- About Che Section -->
-<section id="about-us" class="py-20 bg-gray-100">
+ <section id="about-us" class="py-20 bg-gray-100">
   <div class="container mx-auto">
     <h2 class="text-6xl font-bold text-center mb-12 text-purple-700 font-dancing-script">About us</h2>
     <div class="bg-white text-black rounded-lg p-8 shadow-lg">
@@ -203,19 +241,19 @@
         <div class="p-4">
           <div class="mb-6 animate-slide-in-right">
             <h3 class="text-3xl font-bold mb-4 flex items-center font-serif">
-              <i class="fas fa-info-circle text-green-500 mr-2"></i>Description
+              <i class="fas fa-info-circle text-green-500 mr-2"></i>What Do We Do?
             </h3>
             <p class="text-lg leading-relaxed">This is a Uganda limited company aimed at catalyzing engineering innovations in Uganda, primarily focusing on medical device innovations locally made in Uganda.</p>
           </div>
           <div class="mb-6 animate-slide-in-right delay-100">
             <h3 class="text-3xl font-bold mb-4 flex items-center font-serif">
-              <i class="fas fa-bullseye text-green-500 mr-2"></i>Vision
+              <i class="fas fa-bullseye text-green-500 mr-2"></i>What Is Our Vision?
             </h3>
             <p class="text-lg leading-relaxed">To have locally created/invented devices or products available in the local market using local manufacturing means.</p>
           </div>
           <div class="animate-slide-in-right delay-200">
             <h3 class="text-3xl font-bold mb-4 flex items-center font-serif">
-              <i class="fas fa-tasks text-green-500 mr-2"></i>Objectives
+              <i class="fas fa-tasks text-green-500 mr-2"></i>What Are Our Objectives?
             </h3>
             <ul class="list-disc list-inside text-lg leading-relaxed">
               <li class="mb-2 flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> Self-sustaining system of medical devices in Uganda.</li>
@@ -228,6 +266,7 @@
     </div>
   </div>
 </section>
+
  <!-- About NeoNest Section -->
 <section id="about" class="py-20 bg-gray-100 min-h-screen">
   <div class="container mx-auto">
@@ -253,7 +292,7 @@
   <!-- Problem Section -->
   <section id="problem" class="bg-gray-200 py-20 min-h-screen">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-8 text-purple-700">The Problem</h2>
+      <h2 class="text-6xl font-bold text-center mb-8 text-purple-700 font-dancing-script">The Problem</h2>
       <div class="bg-white shadow-lg rounded-lg p-8 flex flex-col items-center">
         <div class="lg:w-3/4 px-4 text-center lg:text-left mb-8 animate-fade-in">
           <p class="text-lg text-gray-800 mb-4 leading-relaxed">Every 40 seconds, a premature baby dies, with 99% of these deaths occurring in low- and middle-income countries. In Kampala, at Kawempe National Referral Hospital (KNRH), one of Uganda’s largest referral centers, 40% of babies born and received are premature. These babies often arrive from rural villages 2-4 hours away, and during these long trips, there are no effective methods to keep them warm.</p>
@@ -270,7 +309,7 @@
   <!-- Solution Section -->
 <section id="solution" class="py-20 bg-cover bg-center bg-gray-100 bg-fixed" style="background-image: url('./assets/scroll4.png');">
   <div class="container mx-auto bg-white bg-opacity-50 p-8 rounded-lg">
-    <h2 class="text-4xl font-bold text-center mb-12 text-purple-700">Our Solution</h2>
+    <h2 class="text-6xl font-bold text-center mb-12 text-purple-700 font-dancing-script">Our Solution</h2>
     <div class="flex flex-wrap justify-center mt-8">
       <div class="w-full sm:w-1/2 lg:w-1/3 p-4" data-aos="fade-up">
         <div class="card p-6 hover:bg-purple-500 text-black bg-white hover:text-white transition duration-300 rounded-lg shadow-lg">
@@ -315,23 +354,42 @@
     </div>
   </div>
 </section>
+<!-- Impact Section -->
+<section id="impact" class="py-20 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-4xl font-bold text-center mb-12 text-purple-700 font-dancing-script">Our Impact</h2>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="p-4 hidden-animation">
+        <img src="./assets/impact.jpg" alt="Impact Photo" class="rounded-lg shadow-lg w-full h-96 object-cover transform transition duration-500 hover:scale-105">
+      </div>
+      <div class="p-4 hidden-animation">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+          <h3 class="text-3xl font-bold mb-4 text-purple-500">Current Use</h3>
+          <p class="text-lg leading-relaxed text-gray-800 mb-6">Currently a standalone component of our design, the nest is already being used at Kawempe National Referral Hospital for securing babies in the infant warmers.</p>
+          <h3 class="text-3xl font-bold mb-4 text-purple-500">Positive Outcomes</h3>
+          <p class="text-lg leading-relaxed text-gray-800">Our innovation is making a significant impact by providing a reliable, portable, and affordable solution for preterm infants, helping to prevent hypothermia during ambulance trips. This is improving survival rates and health outcomes for many infants in low- and middle-income countries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 
   <!-- Team Section -->
   <section id="team" class="bg-gray-200 py-20">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-8 text-purple-700">Our Team</h2>
+      <h2 class="text-6xl font-bold text-center mb-8 text-purple-700 font-dancing-script">Our Team</h2>
       <div class="flex flex-wrap justify-center mb-12">
         <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
           <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-            <img src="./assets/vivian.jpg" alt="Vivian Arinaitwe" class="mx-auto mb-4 rounded-full w-32 h-32 object-cover">
+            <img src="./assets/vivian2.jpg" alt="Vivian Arinaitwe" class="mx-auto mb-4 rounded-full w-32 h-32 object-cover">
             <h3 class="text-xl font-bold mb-2 text-purple-700">Vivian Arinaitwe</h3>
             <p class="text-gray-800">Biomedical Engineering, Makerere University</p>
           </div>
         </div>
         <div class="w-full sm:w-1/2 lg:w-1/4 p-4">
           <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-            <img src="./assets/joseph.jpg" alt="Joseph Okileng" class="mx-auto mb-4 rounded-full w-32 h-32 object-cover">
+            <img src="./assets/joseph2.jpg" alt="Joseph Okileng" class="mx-auto mb-4 rounded-full w-32 h-32 object-cover">
             <h3 class="text-xl font-bold mb-2 text-purple-700">Joseph Okileng</h3>
             <p class="text-gray-800">Biomedical Engineering, Makerere University</p>
           </div>
@@ -364,7 +422,7 @@
  <!-- Partners Section -->
 <section id="partners" class="py-20 bg-gray-100 min-h-screen">
     <div class="container mx-auto">
-      <h2 class="text-4xl font-bold text-center mb-12 text-purple-700">Our Partners</h2>
+      <h2 class="text-6xl font-bold text-center mb-12 text-purple-700 font-dancing-script">Our Partners</h2>
       <div class="flex flex-wrap justify-center">
         <div class="w-1/2 sm:w-1/4 p-4">
           <div class="bg-white p-6 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105 hover:shadow-2xl">
@@ -409,14 +467,14 @@
   <!-- Contact Section -->
 <section id="contact" class="py-20">
     <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+      <h2 class="text-6xl font-bold text-center mb-8 text-purple-700 font-dancing-script">Contact Us</h2>
       <div class="flex flex-wrap justify-center">
         <div class="w-full md:w-1/2 p-4">
           <div class="bg-white p-6 rounded-lg shadow-lg h-full">
             <h3 class="text-xl font-bold mb-2">Contact Information</h3>
             <p class="mb-4"><i class="fas fa-map-marker-alt mr-2 text-purple-700"></i><strong></strong> Upper Hill Mulago, College Of Health Sciences, P.O Box 7062, Kampala Uganda</p>
             <p class="mb-4"><i class="fas fa-phone-alt mr-2 text-purple-700"></i><strong></strong> +256 778 526 594 / +256 752 465 308</p>
-            <p class="mb-4"><i class="fas fa-envelope mr-2 text-purple-700"></i><strong></strong> arinaitwevivian5@gmail.com</p>
+            <p class="mb-4"><i class="fas fa-envelope mr-2 text-purple-700"></i><strong></strong> cheinnovationsuganda@gmail.com</p>
             <h3 class="text-xl font-bold mt-4 mb-2">Our Social Media Platforms</h3>
             <div class="flex space-x-4">
               <a href="#" class="hover:text-gray-500"><i class="fab fa-facebook-square text-2xl text-purple-700"></i></a>
@@ -483,7 +541,7 @@
       <h3 class="text-lg font-semibold mb-4">Contact</h3>
       <p class="text-sm"><strong>Address:</strong> Upper Hill Mulago, College Of Health Sciences, P.O Box 7062, Kampala Uganda</p>
       <p class="text-sm"><strong>Phone:</strong> +256 778 526 594 / +256 752 465 308</p>
-      <p class="text-sm"><strong>Email:</strong> arinaitwevivian5@gmail.com</p>
+      <p class="text-sm"><strong>Email:</strong> cheinnovationsuganda@gmail.com</p>
     </div>
   </div>
   <div class="text-center mt-8">
@@ -552,6 +610,41 @@
   AOS.init({
     duration: 1000
   });
+  document.getElementById('neo-dropdown').addEventListener('click', function() {
+      var menu = document.getElementById('neo-menu');
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+      }
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+      const observerOptions = {
+        threshold: 0.5
+      };
+
+      const elementsToAnimate = document.querySelectorAll('.hidden-animation');
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(entry.target.classList.contains('p-4') ? 'animate-slide-in-left' : 'animate-fade-in');
+            entry.target.classList.remove('hidden-animation');
+            observer.unobserve(entry.target);
+          } else {
+            entry.target.classList.add('hidden-animation');
+            entry.target.classList.remove('animate-slide-in-left', 'animate-fade-in');
+          }
+        });
+      }, observerOptions);
+
+      elementsToAnimate.forEach(element => {
+        observer.observe(element);
+      });
+    });
+  </script>
+
+
  
 
   
