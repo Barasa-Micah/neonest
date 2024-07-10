@@ -16,7 +16,7 @@
     .bg-green-700 { background-color: #047857; }
     body {
       font-family: 'Raleway', sans-serif;
-      font-size: large;
+      font-size: small;
     }
     html {
       scroll-behavior: smooth;
@@ -238,35 +238,50 @@
 
 
   <!-- Navigation -->
-  <nav class="bg-orange-700 text-white py-4 fixed-navbar">
-    <div class="container mx-auto flex justify-between items-center">
+<nav class="bg-orange-700 text-white py-4 fixed-navbar">
+  <div class="container mx-auto flex justify-between items-center">
       <a href="#" class="text-2xl font-bold font">Che Innovations Uganda Limited</a>
       <div class="md:hidden">
-        <button id="navbar-toggle" class="focus:outline-none">
-          <i id="menu-icon" class="fas fa-bars text-2xl"></i>
-        </button>
+          <button id="navbar-toggle" class="focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+          </button>
       </div>
       <ul id="navbar-menu" class="hidden md:flex space-x-6 font">
-        <li><a href="#about-us" class="hover:text-green-400 font">About</a></li>
-        <li class="relative group">
-          <button id="neo-dropdown" class="hover:text-green-400 focus:outline-none font">NeoNest <i class="fas fa-caret-down"></i></button>
-          <ul id="neo-menu" class="absolute left-0 hidden mt-1 bg-white text-black shadow-lg group-hover:block font">
-            <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200 font">Problem</a></li>
-            <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200 font">Solution</a></li>
-          </ul>
-        </li>
-        <li><a href="#impact" class="hover:text-green-400 font">Impact</a></li>
-
-        <li><a href="#team" class="hover:text-green-400 font">Team</a></li>
-        <li><a href="#partners" class="hover:text-green-400 font">Partners </a></li>
-        <li><a href="gallery.html" class="hover:text-green-400 font">Media</a></li>
-
-        <li><a href="#contact" class="hover:text-green-400 font">Contact</a></li>
-
+          <li><a href="#about-us" class="hover:text-green-400 font">About</a></li>
+          <li class="relative group">
+              <button id="neo-dropdown" class="hover:text-green-400 focus:outline-none font">NeoNest <i class="fas fa-caret-down"></i></button>
+              <ul id="neo-menu" class="absolute left-0 hidden mt-1 bg-white text-black shadow-lg group-hover:block font">
+                  <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200 font">Problem</a></li>
+                  <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200 font">Solution</a></li>
+              </ul>
+          </li>
+          <li><a href="#impact" class="hover:text-green-400 font">Impact</a></li>
+          <li><a href="#team" class="hover:text-green-400 font">Team</a></li>
+          <li><a href="#partners" class="hover:text-green-400 font">Partners</a></li>
+          <li><a href="gallery.html" class="hover:text-green-400 font">Media</a></li>
+          <li><a href="#contact" class="hover:text-green-400 font">Contact</a></li>
       </ul>
-    </div>
-  </nav>
-
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-orange-700 shadow-md">
+      <ul class="flex flex-col space-y-2 p-4 font">
+          <li><a href="#about-us" class="hover:text-green-400 font">About</a></li>
+          <li class="relative group">
+              <button id="mobile-neo-dropdown" class="hover:text-green-400 focus:outline-none font">NeoNest <i class="fas fa-caret-down"></i></button>
+              <ul id="mobile-neo-menu" class="hidden mt-1 bg-white text-black shadow-lg font">
+                  <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200 font">Problem</a></li>
+                  <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200 font">Solution</a></li>
+              </ul>
+          </li>
+          <li><a href="#impact" class="hover:text-green-400 font">Impact</a></li>
+          <li><a href="#team" class="hover:text-green-400 font">Team</a></li>
+          <li><a href="#partners" class="hover:text-green-400 font">Partners</a></li>
+          <li><a href="gallery.html" class="hover:text-green-400 font">Media</a></li>
+          <li><a href="#contact" class="hover:text-green-400 font">Contact</a></li>
+      </ul>
+  </div>
+</nav>
   <!-- Add Font Awesome for the hamburger icon -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
@@ -667,20 +682,25 @@
 
   observer.observe(heroSection);
 
-  document.getElementById('navbar-toggle').addEventListener('click', function() {
-    var menu = document.getElementById('navbar-menu');
-    var icon = document.getElementById('menu-icon');
-    if (menu.classList.contains('hidden')) {
-      menu.classList.remove('hidden');
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-times');
-    } else {
-      menu.classList.add('hidden');
-      icon.classList.remove('fa-times');
-      icon.classList.add('fa-bars');
-    }
-  });
+  const navbarToggle = document.getElementById('navbar-toggle');
+    const navbarMenu = document.getElementById('navbar-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const neoDropdown = document.getElementById('neo-dropdown');
+    const neoMenu = document.getElementById('neo-menu');
+    const mobileNeoDropdown = document.getElementById('mobile-neo-dropdown');
+    const mobileNeoMenu = document.getElementById('mobile-neo-menu');
 
+    navbarToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    neoDropdown.addEventListener('click', () => {
+        neoMenu.classList.toggle('hidden');
+    });
+
+    mobileNeoDropdown.addEventListener('click', () => {
+        mobileNeoMenu.classList.toggle('hidden');
+    });
   document.addEventListener('DOMContentLoaded', () => {
     const problemSection = document.getElementById('problem');
     const problemElement = problemSection.querySelector('.animate-slide-in-up');
