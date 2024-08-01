@@ -75,52 +75,55 @@
   </style>
 </head>
 <body class="bg-gray-100">
-  <!-- Navigation -->
-  <nav class="bg-orange-700 text-white py-4 fixed-navbar">
-    <div class="container mx-auto flex justify-between items-center">
-      <a href="#" class="text-2xl font-bold" style="font-family: 'Arial Black', sans-serif;">Che Innovations Uganda Limited</a>
+   <!-- Navigation -->
+<nav class="bg-orange-700 text-white py-4 fixed-navbar">
+  <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold font">Che Innovations Uganda Limited</a>
       <div class="md:hidden">
-        <button id="navbar-toggle" class="focus:outline-none">
-          <i id="menu-icon" class="fas fa-bars text-2xl"></i>
-        </button>
+          <button id="navbar-toggle" class="focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+          </button>
       </div>
-      <ul id="navbar-menu" class="hidden md:flex space-x-6" style="font-family: 'Arial Black', sans-serif;">
-        <li><a href="index.html" class="hover:text-green-400">Home</a></li>
-        <li><a href="index.html#about-us" class="hover:text-green-400">About</a></li>
-        <li class="relative group">
-          <button id="neo-dropdown" class="hover:text-green-400 focus:outline-none">NeoNest <i class="fas fa-caret-down"></i></button>
-          <ul id="neo-menu" class="absolute left-0 hidden mt-1 bg-white text-black shadow-lg group-hover:block">
-            <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200">Problem</a></li>
-            <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200">Solution</a></li>
-          </ul>
-        </li>
-        <li><a href="index.html#impact" class="hover:text-green-400">Impact</a></li>
-        <li><a href="index.html#team" class="hover:text-green-400">Team</a></li>
-        <li><a href="index.html#partners" class="hover:text-green-400">Partners</a></li>
-        <li><a href="gallery.html" class="hover:text-green-400">Media</a></li>
-        <li><a href="index.html#contact" class="hover:text-green-400">Contact</a></li>
-      </ul>
-    </div>
-    <div id="mobile-menu" class="hidden md:hidden bg-orange-700 shadow-md">
-      <ul class="flex flex-col space-y-2 p-4" style="font-family: 'Arial Black', sans-serif;">
-        <li><a href="index.html" class="hover:text-green-400">Home</a></li>
-        <li><a href="index.html#about-us" class="hover:text-green-400">About</a></li>
-        <li class="relative group">
-          <button id="mobile-neo-dropdown" class="hover:text-green-400 focus:outline-none">NeoNest <i class="fas fa-caret-down"></i></button>
-          <ul id="mobile-neo-menu" class="hidden mt-1 bg-white text-black shadow-lg">
-            <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200">Problem</a></li>
-            <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200">Solution</a></li>
-          </ul>
-        </li>
-        <li><a href="index.html#impact" class="hover:text-green-400">Impact</a></li>
-        <li><a href="index.html#team" class="hover:text-green-400">Team</a></li>
-        <li><a href="index.html#partners" class="hover:text-green-400">Partners</a></li>
-        <li><a href="gallery.html" class="hover:text-green-400">Media</a></li>
-        <li><a href="index.html#contact" class="hover:text-green-400">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+      <ul id="navbar-menu" class="hidden md:flex space-x-6 font">
+        <li><a href="index.html" class="hover:text-green-400 font">Home</a></li>
 
+          <li><a href="index.html#about-us" class="hover:text-green-400 font">About</a></li>
+          <li class="relative group">
+              <button id="neo-dropdown" class="hover:text-green-400 focus:outline-none font">NeoNest <i class="fas fa-caret-down"></i></button>
+              <ul id="neo-menu" class="absolute left-0 hidden mt-1 bg-white text-black shadow-lg group-hover:block font">
+                  <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200 font">Problem</a></li>
+                  <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200 font">Solution</a></li>
+              </ul>
+          </li>
+          <li><a href="index.html#impact" class="hover:text-green-400 font">Impact</a></li>
+          <li><a href="index.html#team" class="hover:text-green-400 font">Team</a></li>
+          <li><a href="index.html#partners" class="hover:text-green-400 font">Partners</a></li>
+          <li><a href="gallery.html" class="hover:text-green-400 font">Media</a></li>
+          <li><a href="index.html#contact" class="hover:text-green-400 font">Contact</a></li>
+      </ul>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-orange-700 shadow-md">
+      <ul class="flex flex-col space-y-2 p-4 font">
+        <li><a href="index.html" class="hover:text-green-400 font">Home</a></li>
+
+          <li><a href="index.html#about-us" class="hover:text-green-400 font">About</a></li>
+          <li class="relative group">
+              <button id="mobile-neo-dropdown" class="hover:text-green-400 focus:outline-none font">NeoNest <i class="fas fa-caret-down"></i></button>
+              <ul id="mobile-neo-menu" class="hidden mt-1 bg-white text-black shadow-lg font">
+                  <li><a href="index.html#problem" class="block px-4 py-2 hover:bg-gray-200 font">Problem</a></li>
+                  <li><a href="index.html#solution" class="block px-4 py-2 hover:bg-gray-200 font">Solution</a></li>
+              </ul>
+          </li>
+          <li><a href="index.html#impact" class="hover:text-green-400 font">Impact</a></li>
+          <li><a href="index.html#team" class="hover:text-green-400 font">Team</a></li>
+          <li><a href="index.html#partners" class="hover:text-green-400 font">Partners</a></li>
+          <li><a href="gallery.html" class="hover:text-green-400 font">Media</a></li>
+          <li><a href="index.html#contact" class="hover:text-green-400 font">Contact</a></li>
+      </ul>
+  </div>
+</nav>
   <!-- Gallery Section -->
   <section id="gallery" class="pt-20 pb-10">
     <div class="container mx-auto pt-24">
